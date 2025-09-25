@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Naruto</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Projeto desenvolvido por Barbara Sabrina e Danilo Lang Waithmam</h1>
+
+    <div class="container">
+      <h1>Buscador de Personagens de Naruto</h1>
+
+      <form id="character-form" class="search-form">
+        <input
+          type="text"
+          id="character-name"
+          class="search-input"
+          placeholder="Ex: Naruto Uzumaki"
+          required
+        />
+        <button type="submit" class="search-button">Buscar</button>
+      </form>
+
+      <div id="results-container" class="results">
+        <p class="empty-state">Digite o nome de um personagem para buscar.</p>
+      </div>
+    </div>
+  </body>
+</html>
