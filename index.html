@@ -1,32 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API Naruto</title>
+    <title>ID Ninja - Naruto</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script src="./js/script.js" defer></script>
   </head>
+
   <body>
-    <h1>Projeto desenvolvido por Barbara Sabrina e Danilo Lang Waithmam</h1>
+    <div class="nomes">
+      <h1>Barbara e Danilo</h1>
+    </div>
 
     <div class="container">
-      <h1>Buscador de Personagens de Naruto</h1>
+      <h1>Escolha um número de 1 a 70 e descubra qual ninja você é:</h1>
 
-      <form id="character-form" class="search-form">
+      <!-- Área de pesquisa -->
+      <div class="caixa-pesquisa">
         <input
-          type="text"
-          id="character-name"
-          class="search-input"
-          placeholder="Ex: Naruto Uzumaki"
-          required
+          type="number"
+          min="1"
+          max="70"
+          id="entradaPesquisa"
+          placeholder="Digite um número..."
         />
-        <button type="submit" class="search-button">Buscar</button>
-      </form>
+        <button id="botaoPesquisa">Buscar</button>
+      </div>
 
-      <div id="results-container" class="results">
-        <p class="empty-state">Digite o nome de um personagem para buscar.</p>
+      <!-- Documento Ninja -->
+      <div id="cartao" class="cartao-ninja oculto">
+        <div class="cartao-corpo">
+          <div class="caixa-foto"></div>
+          <div class="caixa-dados">
+            <h2 id="nomePersonagem"></h2>
+            <p><strong>Poder:</strong> <span id="poderPersonagem"></span></p>
+            <p><strong>Vila:</strong> <span id="vilaPersonagem"></span></p>
+            <p><strong>Resumo:</strong> <span id="resumoPersonagem"></span></p>
+            <!-- <p><strong>Jutsus:</strong></p>
+                    <ul id="jutsusPersonagem"></ul> -->
+          </div>
+        </div>
+
+        <div class="cartao-rodape">
+          <p>Assinatura do Hokage</p>
+          <div class="carimbo">火</div>
+        </div>
       </div>
     </div>
+
+    <div id="resultDiv"></div>
   </body>
 </html>

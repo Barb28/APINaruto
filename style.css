@@ -1,161 +1,161 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
-:root {
-  --primary-color: #f05454;
-  --secondary-color: #30475e;
-  --background-color: #222831;
-  --text-color: #f5f5f5;
-  --card-background: #393e46;
-  --border-radius: 10px;
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background: linear-gradient(
+    135deg,
+    #ff6f00,
+    #ff8c00,
+    #1c1c1c
+  ); /* laranja Naruto + preto */
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
   min-height: 100vh;
-  margin: 0;
-  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Título principal */
+.nomes {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nomes h1 {
+  font-size: 2.8rem;
+  color: #ffd700; /* dourado chakra */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 .container {
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   text-align: center;
 }
 
 h1 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.search-form {
+/* Caixa de pesquisa */
+.caixa-pesquisa {
   display: flex;
-  gap: 10px;
-  margin-bottom: 2rem;
   justify-content: center;
-  width: 100%;
+  margin-bottom: 20px;
 }
 
-.search-input {
-  width: 100%;
-  padding: 12px;
-  border-radius: var(--border-radius);
-  border: none;
-  background-color: var(--card-background);
-  color: var(--text-color);
+.caixa-pesquisa input {
+  padding: 10px;
   font-size: 1rem;
+  border: 2px solid #e53935; /* vermelho Uchiha */
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  width: 60%;
 }
 
-.search-input::placeholder {
-  color: #aaa;
-}
-
-.search-button {
-  padding: 12px 24px;
-  border-radius: var(--border-radius);
-  border: none;
-  background-color: var(--primary-color);
-  color: var(--text-color);
+.caixa-pesquisa button {
+  padding: 10px 20px;
   font-size: 1rem;
+  border: none;
+  background: #e53935; /* botão vermelho */
+  color: #fff;
   font-weight: bold;
+  border-radius: 0 8px 8px 0;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s;
 }
 
-.search-button:hover {
-  background-color: #ff7272;
+.caixa-pesquisa button:hover {
+  background: #b71c1c;
 }
 
-.results {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-/* .character-card {
-  background-color: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+/* Cartão ninja */
+.cartao-ninja {
+  background: #1c1c1c;
+  border: 3px solid #ff6f00;
+  border-radius: 16px;
   overflow: hidden;
-  width: 100%;
-  max-width: 350px;
-  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(255, 111, 0, 0.6);
+  padding: 20px;
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: aparecer 0.6s ease;
 }
 
-.character-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.cartao-ninja.oculto {
+  display: none;
 }
 
-.card-header {
+/* Corpo */
+.cartao-corpo {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
+  gap: 20px;
 }
 
-.profile-image {
-  width: 100px;
-  height: 100px;
+.caixa-foto img {
+  width: 180px;
+  height: 220px;
+  border: 3px solid #ff6f00;
+  border-radius: 8px;
   object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid var(--primary-color);
 }
 
-.card-title {
-  margin: 0;
-  color: var(--primary-color);
+.caixa-dados {
+  flex: 1;
+}
+
+.caixa-dados h2 {
   font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ffd700;
 }
 
-.card-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.caixa-dados p {
+  margin-bottom: 6px;
 }
 
-.card-details p {
-  margin: 0;
-}
-
-.card-details strong {
-  color: var(--primary-color);
-}
-
-.summary {
-  font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.jutsus-list {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.jutsus-list li {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-}
-
-.empty-state {
-  color: #aaa;
-  font-size: 1.2rem;
-  margin-top: 2rem;
+/* .caixa-dados ul {
+  list-style: disc;
+  margin-left: 20px;
+  color: #ffcc80;
 } */
+
+/* Rodapé */
+.cartao-rodape {
+  text-align: right;
+  margin-top: 15px;
+  font-style: italic;
+  color: #bbb;
+  position: relative;
+}
+
+.carimbo {
+  font-size: 2rem;
+  color: #e53935;
+  font-weight: bold;
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  opacity: 0.6;
+  transform: rotate(-15deg);
+}
+
+/* Animação de entrada */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
